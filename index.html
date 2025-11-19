@@ -22,6 +22,16 @@
     <!-- Custom css link -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "T4_zErNjOUNhmLliq",
+            });
+        })();
+    </script>
 </head>
 <body>
     
@@ -96,7 +106,8 @@
                     <h2 class="card-title title-medium">About</h2>
 
                     <p class="body-medium card-text">
-                        I am a self-taught and creative frontend developer, interested in creating intuitive, responsive and wonderfull interfaces for users. With experience in HTML, CSS, JavaScript and modern frameworks such as React and Vue.js, I can develop small websites such as Landing Page or more scalable systems such as the use of modern resources.
+                        I am a self-taught and creative frontend developer, interested in creating intuitive, responsive and wonderfull interfaces for users. With experience in HTML, CSS, JavaScript and modern frameworks such as React and Vue.js, I can develop small websites such as Landing Page or more scalable systems such as the use of modern resources. <br />
+                        ( 独学でクリエイティブなフロントエンド開発者として活動しており、ユーザーにとって直感的でレスポンシブかつ魅力的なインターフェースの構築に注力しています。HTML、CSS、JavaScript、そしてReactやVue.jsといった最新フレームワークの経験を活かし、ランディングページなどの小規模なウェブサイトから、最新のリソースを活用したスケーラブルなシステムまで、幅広い開発に対応可能です。)
                     </p>
 
                     <ul class="about-list">
@@ -426,17 +437,18 @@
 
                             <div class="contact-form">
                                 <h3 class="title-large">Let's Work Together</h3>
-                                <form action="" method="POST" class="input-wrapper">
 
-                                    <input type="text" name="name" placeholder="Name**" class="input-field" required>
+                                <form class="input-wrapper">
 
-                                    <input type="email" name="email" placeholder="Email**" class="input-field" required>
+                                    <input type="text" name="name" id="name" placeholder="name" class="input-field" required>
 
-                                    <input type="text" name="subject" placeholder="Subject" class="input-field">
+                                    <input type="email" name="email" id="email" placeholder="email" class="input-field" required>
+
+                                    <input type="text" name="subject" id="subject" placeholder="subject" class="input-field">
                                     
-                                    <textarea name="message" class="textarea" placeholder="Message**" required></textarea>
+                                    <textarea name="message" id="message" class="textarea" placeholder="message" required></textarea>
 
-                                    <button class="btn" type="submit">
+                                    <button class="btn" type="submit" onclick="sendEmail()">
                                         <span class="label-large">Send Message</span>
                                         <div class="state-layer"></div>
                                     </button>
